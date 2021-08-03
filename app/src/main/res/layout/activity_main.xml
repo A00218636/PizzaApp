@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="124dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteY="165dp">
+
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="391dp"
+            android:layout_height="653dp"
+            android:layout_marginStart="20dp"
+
+
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:src="@drawable/pizza1"
+            android:visibility="visible" />
+
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="fill_parent"-->
+
+
+        <Button
+            android:id="@+id/btnAddPizza"
+
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/img"
+
+            android:layout_marginTop="467dp"
+            android:layout_marginEnd="3dp"
+            android:layout_toStartOf="@+id/PizzaCount"
+            android:onClick="incCount"
+            android:text="ADD" />
+
+        <Button
+            android:id="@+id/btnMinusPizza"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="484dp"
+            android:layout_marginEnd="77dp"
+            android:onClick="decCount"
+            android:text="REMOVE" />
+
+        <EditText
+            android:id="@+id/PizzaCount"
+            android:layout_width="45dp"
+
+            android:layout_height="40dp"
+
+            android:layout_alignTop="@+id/img"
+
+
+            android:layout_marginTop="469dp"
+            android:layout_marginEnd="7dp"
+            android:layout_toStartOf="@+id/btnMinusPizza"
+            android:background="@color/black"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/pizzaName"
+            android:layout_width="180dp"
+
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="69dp"
+
+            android:layout_marginRight="212dp"
+            android:background="@color/white"
+            android:textColor="@color/purple_700"
+            android:textSize="20sp"
+            android:text="Pizza Name" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:onClick="GoToCart"
+
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+
+
+
+
+        <Button
+            android:id="@+id/btnNextImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:width="25dp"
+            android:text="Next" />
+
+        <Button
+            android:id="@+id/btnPreviousImage"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:width="25dp"
+            android:text="Back"/>
+<!--            app:icon="@drawable/ic_baseline_chevron_left_24"-->
+<!--            app:iconGravity="textStart"-->
+<!--            app:iconTint="#000000" />
+style="@style/Widget.MaterialComponents.Button.TextButton"
+           -->
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/mobile_navigation" />
+
+
+        <!--            app:layout_constraintBottom_toTopOf="@id/nav_view"-->
+
+    </RelativeLayout>
+
+
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/nav_view"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="0dp"-->
+<!--        android:layout_marginEnd="0dp"-->
+<!--        android:background="?android:attr/windowBackground"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:menu="@menu/bottom_nav_menu" />-->
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
