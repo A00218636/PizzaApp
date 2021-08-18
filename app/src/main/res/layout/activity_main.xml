@@ -6,7 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize">
-
+    <Spinner
+        android:id="@+id/pizzaSpinner"
+        android:layout_height="50dp"
+        android:layout_width="160dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,19 +67,33 @@
             android:onClick="decCount"
             android:text="REMOVE" />
 
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/btnAddPizza"
+            android:layout_alignStart="@+id/PizzaCount"
+            android:layout_alignBottom="@+id/img"
+            android:layout_marginStart="-136dp"
+            android:layout_marginTop="39dp"
+            android:layout_marginBottom="41dp"
+            android:onClick="addToCart"
+            android:text="ADD TO CART" />
+
         <EditText
             android:id="@+id/PizzaCount"
-            android:layout_width="45dp"
+            android:layout_width="wrap_content"
 
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
 
             android:layout_alignTop="@+id/img"
 
 
             android:layout_marginTop="469dp"
             android:layout_marginEnd="7dp"
-            android:layout_toStartOf="@+id/btnMinusPizza"
             android:background="@color/black"
+            android:layout_toStartOf="@+id/btnMinusPizza"
             android:text="0" />
 
         <TextView
@@ -82,24 +105,20 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="69dp"
 
-            android:layout_marginRight="212dp"
+            android:layout_marginRight="100dp"
             android:background="@color/white"
             android:textColor="@color/purple_700"
             android:textSize="20sp"
             android:text="Pizza Name" />
 
+
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="350dp"
             android:onClick="GoToCart"
-
-            app:srcCompat="@android:drawable/btn_star_big_on" />
-
-
-
-
+            android:src="@drawable/shopping_cart" />
 
         <Button
             android:id="@+id/btnNextImage"

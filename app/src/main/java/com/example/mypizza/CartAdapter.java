@@ -42,10 +42,21 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         if(cart_list!=null && cart_list.size()>0)
         {
             CartModel cartObj = cart_list.get(position);
-            holder.deliveredBy_tv.setText(cartObj.getDeliveredBy());
-            String amt = Double.toString(cartObj.getAmount());
-            holder.amount_tv.setText(amt);
-            holder.name_tv.setText(cartObj.getName());
+            if (cartObj != null) {
+                holder.deliveredBy_tv.setText(cartObj.getDeliveredBy());
+                String amt = Double.toString(cartObj.netAmount);
+
+                holder.amount_tv.setText(amt);
+                holder.price_tv.setText(Double.toString(cartObj.price));
+
+                holder.name_tv.setText(cartObj.getName());
+                String pizCount = Integer.toString(cartObj.pizCount);
+                holder.count_tv.setText(pizCount);
+                String tax = Double.toString(cartObj.tax);
+                holder.tax_tv.setText(tax);
+            }
+
+
 
 
         }
@@ -60,14 +71,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView deliveredBy_tv, name_tv, amount_tv;
+        TextView deliveredBy_tv, name_tv,price_tv, amount_tv, tax_tv, count_tv;
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
 
-            name_tv =  itemView.findViewById(R.id.name_tv);
+            name_tv =  itemView.findViewById(R.id.NameItem_tv);
             deliveredBy_tv =  itemView.findViewById(R.id.deliveredBy_tv);
-            amount_tv =  itemView.findViewById(R.id.amount_tv);
+            amount_tv =  itemView.findViewById(R.id.amountItem_tv);
+            tax_tv = itemView.findViewById(R.id.taxItem_tv);
+            price_tv = itemView.findViewById(R.id.PriceItem_tv);
+            count_tv = (TextView) itemView.findViewById(R.id.countItem_tv);
         }
     }
 }

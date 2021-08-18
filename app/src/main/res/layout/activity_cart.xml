@@ -9,12 +9,32 @@
          >
         <TableRow>
 
-
             <TextView
                 android:id="@+id/nameView"
-                android:textSize ="16sp"
+                android:textSize ="12sp"
                 android:padding="10dp"
                 android:text="Name"
+                android:layout_column="1"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/priceView"
+                android:textSize ="16sp"
+                android:padding="10dp"
+                android:text="Price"
+                android:layout_column="1"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/taxView"
+                android:textSize ="16sp"
+                android:padding="10dp"
+                android:text="Tax"
+                android:layout_column="1"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/countView"
+                android:textSize ="16sp"
+                android:padding="10dp"
+                android:text="Count"
                 android:layout_column="1"
                 android:gravity="center" />
 
@@ -39,5 +59,23 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+        <TableRow>
+
+            <Button
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="PAY"
+                android:id="@+id/paymentBtn"/>
+        </TableRow>
     </TableLayout>
+
+
+
+
+
+
+
+
 
