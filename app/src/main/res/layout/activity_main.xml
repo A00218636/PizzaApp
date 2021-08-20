@@ -9,9 +9,10 @@
     <Spinner
         android:id="@+id/pizzaSpinner"
         android:layout_height="50dp"
+        android:theme="@style/TextAppearance.AppCompat.Widget.DropDownItem"
         android:layout_width="160dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="100dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,43 +30,50 @@
             android:layout_width="391dp"
             android:layout_height="653dp"
             android:layout_marginStart="20dp"
-
-
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:adjustViewBounds="true"
             android:background="@color/white"
-            android:src="@drawable/pizza1"
+            android:src="@drawable/farmhouse"
             android:visibility="visible" />
-
-<!--            android:layout_width="fill_parent"-->
-<!--            android:layout_height="fill_parent"-->
 
 
         <Button
             android:id="@+id/btnAddPizza"
-
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_alignTop="@+id/img"
 
             android:layout_marginTop="467dp"
-            android:layout_marginEnd="3dp"
             android:layout_toStartOf="@+id/PizzaCount"
             android:onClick="incCount"
             android:text="ADD" />
 
+        <EditText
+            android:id="@+id/PizzaCount"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_alignTop="@+id/img"
+            android:textStyle="bold"
+            android:layout_marginTop="467dp"
+            android:layout_marginEnd="7dp"
+            android:background="@color/black"
+            android:layout_toStartOf="@+id/btnMinusPizza"
+            android:text="0" />
+
         <Button
             android:id="@+id/btnMinusPizza"
+            android:layout_alignTop="@+id/img"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="484dp"
-            android:layout_marginEnd="77dp"
+            android:layout_marginTop="467dp"            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="67dp"
             android:onClick="decCount"
             android:text="REMOVE" />
+
 
         <Button
             android:id="@+id/btnAddToCart"
@@ -75,26 +83,11 @@
             android:layout_below="@+id/btnAddPizza"
             android:layout_alignStart="@+id/PizzaCount"
             android:layout_alignBottom="@+id/img"
-            android:layout_marginStart="-136dp"
-            android:layout_marginTop="39dp"
-            android:layout_marginBottom="41dp"
+            android:layout_marginStart="-39dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="42dp"
             android:onClick="addToCart"
             android:text="ADD TO CART" />
-
-        <EditText
-            android:id="@+id/PizzaCount"
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-
-            android:layout_alignTop="@+id/img"
-
-
-            android:layout_marginTop="469dp"
-            android:layout_marginEnd="7dp"
-            android:background="@color/black"
-            android:layout_toStartOf="@+id/btnMinusPizza"
-            android:text="0" />
 
         <TextView
             android:id="@+id/pizzaName"

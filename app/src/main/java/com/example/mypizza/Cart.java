@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +21,7 @@ public class Cart extends AppCompatActivity {
 
     RecyclerView recycler_view;
     CartAdapter adapter;
+    DatabaseHelper myDb;
 
     String pizzaName;
     int pizCount;
@@ -29,7 +32,6 @@ public class Cart extends AppCompatActivity {
 
     List<CartModel> cart_list = new ArrayList<>();
 
-    DatabaseHelper myDb = new DatabaseHelper(this);
 
 
 
@@ -37,6 +39,7 @@ public class Cart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
+        myDb = new DatabaseHelper(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
@@ -45,6 +48,18 @@ public class Cart extends AppCompatActivity {
         setRecyclerView();
 
        final Button cartButton =  (Button) findViewById(R.id.paymentBtn);
+        final Button clrCartButton =  (Button) findViewById(R.id.clrCart);
+
+        clrCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              myDb.deleteData();
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(getIntent());
+                overridePendingTransition(0, 0);
+            }
+        });
        cartButton.setOnClickListener(new View.OnClickListener(){
            @Override
 
@@ -88,56 +103,8 @@ public class Cart extends AppCompatActivity {
        }
 
 
-//        cart_list.add(new CartModel("Farmhouse",2,20,22,"John"));
-//        cart_list.add(new CartModel("Pepperoni",2,20,22,"Peter"));
-//        cart_list.add(new CartModel("Margherita",2,20,22,"Nathan"));
-
-//        List<Pizza> pizzaList = new ArrayList<>();
-//        Pizza obj = new Pizza();
 
         return  cart_list;
 
     }
-
-//    public void redirectToPaymentView(View view) {
-//        Intent intent = new Intent(this,
-//                Payment.class);
-//
-//        startActivity(intent);
-//    }
-
-//    public void init(){
-//        TableLayout ll = findViewById(R.id.displayLinear);
-//
-//
-//        for (int i = 0; i <5; i++) {
-//
-//            TableRow row= new TableRow(this);
-//            TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
-//            row.setLayoutParams(lp);
-//            CheckBox checkBox = new CheckBox(this);
-//            TextView tv = new TextView(this);
-////           ImageButton addBtn = new ImageButton(this);
-////            addBtn.setImageResource(R.drawable.add);
-////            ImageButton minusBtn = new ImageButton(this);
-////            minusBtn.setImageResource(R.drawable.minus);
-//           TextView qty = new TextView(this);
-//
-//            qty.setText("10");
-//            row.addView(checkBox);
-//            //row.addView(minusBtn);
-//            row.addView(qty);
-//            //row.addView(addBtn);
-//            ll.addView(row,i);
-//        }
-//    }
-
-//    public int getDeiliveredBy() {
-//    }
-//
-//    public int getAmount() {
-//    }
-//
-//    public int getName() {
-//    }
 }

@@ -93,6 +93,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cartBtn.setOnClickListener(this);
         addTtoCart.setOnClickListener(this);
 
+        changePizzaImg();
+
 
 
         // Take the instance of Spinner and
@@ -179,14 +181,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
 
             case 0:
-                myImage.setImageResource(R.drawable.pizza1);
+                myImage.setImageResource(R.drawable.farmhouse);
                 editText.setText(String.valueOf(farmhouse.pizzaCount));
                 pizzaName.setText(farmhouse.pizzaName);
 
                 break;
 
             case 1:
-                myImage.setImageResource(R.drawable.pizza2);
+                myImage.setImageResource(R.drawable.mushroom);
                 editText.setText(String.valueOf(mushroom.pizzaCount));
                 pizzaName.setText(mushroom.pizzaName);
 

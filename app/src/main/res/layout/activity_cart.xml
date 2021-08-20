@@ -1,9 +1,8 @@
 
-
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="1,2,3"
+        android:stretchColumns="*"
         android:layout_margin="8dp"
         android:id="@+id/displayLinear"
          >
@@ -11,7 +10,7 @@
 
             <TextView
                 android:id="@+id/nameView"
-                android:textSize ="12sp"
+                android:textSize ="16sp"
                 android:padding="10dp"
                 android:text="Name"
                 android:layout_column="1"
@@ -50,7 +49,7 @@
                 android:textSize ="16sp"
                 android:id="@+id/deliveredByView"
                 android:padding="10dp"
-                android:text="Delivered By"
+                android:text="Del. By"
                 android:layout_column="1"
                 android:gravity="center" />
         </TableRow>
@@ -68,6 +67,16 @@
                 android:layout_weight="1"
                 android:text="PAY"
                 android:id="@+id/paymentBtn"/>
+
+        </TableRow>
+        <TableRow>
+
+            <Button
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="CLEAR CART"
+                android:id="@+id/clrCart"/>
         </TableRow>
     </TableLayout>
 
